@@ -2,6 +2,10 @@
  * Created by OgnjenVulic on 1/15/2017.
  */
 var webpack = require('webpack');
+const path = require('path');
+const buildPath = path.resolve(__dirname, 'build');
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+// const TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 module.exports = {
     entry:[
@@ -15,7 +19,15 @@ module.exports = {
         new webpack.ProvidePlugin({
             '$':'jquery',
             'jQuery': 'jquery'
-        })
+        }),
+        // Enables Hot Modules Replacement
+        new webpack.HotModuleReplacementPlugin(),
+        // Allows error warnings but does not stop compiling.
+        new webpack.NoErrorsPlugin(),
+        // Moves files
+        // new TransferWebpackPlugin([
+        //     {from: 'www'},
+        // ], path.resolve(__dirname, 'src')),
     ],
     output: {
         path:__dirname,
