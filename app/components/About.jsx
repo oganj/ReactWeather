@@ -19,6 +19,9 @@ const styles = {
   propToggleHeader: {
     margin: '20px auto 10px',
   },
+  wrapContent:{
+  	whiteSpace: 'normal'
+  },
 };
 
 const tableData = [
@@ -91,9 +94,36 @@ var About = React.createClass({
     render: function () {
         return (
            <div>
-            <MuiThemeProvider muiTheme={muiTheme}>
-            
-            <Card initiallyExpanded={true}>
+            <MuiThemeProvider muiTheme={muiTheme.wrapContent}>
+             <div>
+				<Card initiallyExpanded={true}>
+		             <CardText>
+			             <Table>
+			             <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
+			             	<TableRow>
+				              <TableHeaderColumn tooltip="R.B.">R.B.</TableHeaderColumn>
+			              	  <TableHeaderColumn tooltip="Finkcionlkne celine sklopa" style={styles.wrapContent}>Finkcionlkne celine sklopa</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Slojevi sklopa" style={styles.wrapContent}>Slojevi sklopa</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Debljina dj [cm]" style={styles.wrapContent}>Debljina dj [cm]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Gustina ϱ [kg/m3]" style={styles.wrapContent}>Gustina ϱ [kg/m3]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Toplotna provodljiv ʎj [W/mK]" style={styles.wrapContent}>Toplotna provodljiv ʎj [W/mK]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Specifična toplota C [J/(kgxK)]" style={styles.wrapContent}>Specifična toplota C [J/(kgxK)]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Koeficijent difuzije vodene pare µ" style={styles.wrapContent}>Koeficijent difuzije vodene pare µ</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Otpornost prolazu toplote sloja Rj [m2K/W]" style={styles.wrapContent}>Otpornost prolazu toplote sloja Rj [m2K/W]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Otpornost prolazu toplote Rm [m2K/W]" style={styles.wrapContent}>Otpornost prolazu toplote Rm [m2K/W]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Koeficijent prolaza toplote U [w/m2K]" style={styles.wrapContent}>Koeficijent prolaza toplote U [w/m2K]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Temperatura na granicama provera kondenzacije θj [C°]" style={styles.wrapContent}>Temperatura na granicama provera kondenzacije θj [C°]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Temperatura na granicama, raspodela temeperature θj [C°]" style={styles.wrapContent}>Temperatura na granicama, raspodela temeperature θj [C°]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Parcijalni pritisci vodene pare p [kPa]" style={styles.wrapContent}>Parcijalni pritisci vodene pare p [kPa]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Pritisci zasićenja vodene pare p [kPa]" style={styles.wrapContent}>Pritisci zasićenja vodene pare p [kPa]</TableHeaderColumn>
+				              <TableHeaderColumn tooltip="Difuzija vodene pare Sd=µ*d [m]" style={styles.wrapContent}>Difuzija vodene pare Sd=µ*d [m]</TableHeaderColumn>
+		            		</TableRow>
+			             </TableHeader>
+			             
+			             </Table>
+		             </CardText>
+             	</Card>
+            <Card initiallyExpanded={false}>
                 <CardHeader
                   title="Konstrukcija"
                   subtitle="analiza gradjevinskih konstrukcija"
@@ -221,7 +251,7 @@ var About = React.createClass({
 		          </div>
                 </CardText>
             </Card>
-		        
+		        </div>
         	
         </MuiThemeProvider>
       </div>

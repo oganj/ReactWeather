@@ -12,7 +12,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 //Load Foundation
-require('style!css!foundation-sites/dist/foundation.min.css');
+require('style!css!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
 //App CSS

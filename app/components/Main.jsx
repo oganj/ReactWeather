@@ -8,7 +8,7 @@ var Main = (props)=>{
         return (
             <div>
                 <Nav/>
-                <div className="row">
+                <div>
                     <div>
                         {props.children}
                     </div>
